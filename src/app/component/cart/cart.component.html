@@ -25,21 +25,21 @@
                         <td style="width: 12%;">{{item.quantity}}</td>
                         <td style="width: 12%;">{{item.total}}</td>
                         <td>
-                          <button (click)="removeItem(item)" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button> 
+                          <button (click)="removeItem(item)" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
                         </td>
-                      </tr> 
+                      </tr>
                       <tr>
                           <td colspan="4"></td>
                           <td><button click="emptycart()" class="btn btn-danger">Empty Cart</button></td>
                           <td><button routerLink="/products" class="btn btn-primary">Shop More</button></td>
                           <td><button class="btn btn-success">Check Out</button></td>
                           <td><strong>Total: ${{grandTotal}}</strong></td>
-                      </tr>       
+                      </tr>
                   </tbody>
               </table>
             </div>
         </div>
-    </div> 
+    </div>
 </ng-container>
 <ng-container *ngIf="products.length ==0">
     <div class="container">

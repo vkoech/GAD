@@ -8,17 +8,21 @@ import { CartService } from 'src/app/service/cart.service';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-    
-  public productList: any; 
+
+  public productList: any;
+  searchkey: string ="";
   constructor(private api: ApiService, private cartService: CartService) { }
 
   ngOnInit(): void {
     this.api.getProduct().subscribe(res=>{
-      this.productList =res
+      this.productList =res;
 
       this.productList.forEach((a:any)=>{
         Object.assign(a,{quantity:1, total:a.price});
       });
+    });
+    this.cartService.search.subscribe((val:any)=>{
+      this.searchkey=val;
     })
   }
   addtocart(item: any){

@@ -2,13 +2,12 @@
     <div class="navbar navbar-dark bg-primary shadow-sm">
       <div class="navbar-brand align-item-center d-flex">
          <i style="font-size: 40px;" class="fab fa-vuejs">&nbsp;
-        </i> 
+        </i>
         <strong style="font-size: 30px">Vincart</strong>
-  
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="search">
+            <input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="search">
+            <span class="fas fa-search search-icon"></span>
         </div>
-        <span class="fas fa-search search-icon"></span>
       </div>
       <button routerLink="cart" class="btn btn-primary">
           <i style="font-size: 30px;" class="fas fa-cart-plus"></i>
